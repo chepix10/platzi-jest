@@ -20,5 +20,10 @@
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
     "standard": "^13.1.0"
+  },
+  "standard": {
+    "env": {
+      "jest": true
+    }
   }
 }
