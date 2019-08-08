@@ -15,4 +15,18 @@ describe('Probar Async/Await', () => {
       expect(data.name).toEqual('Rick Sanchez')
     })
   })
+
+  test('Realizar una petición a una api con error', async () => {
+    const apiError = 'http://httpstat.us/404'
+    const peticion = getDataFromApi(apiError)
+    await expect(peticion).rejects.toEqual(Error('Request failed with status code 404'))
+  })
+
+  test('Resuelve un Hola', async () => {
+    await expect(Promise.resolve('Hola')).resolves.toBe('Hola')
+  })
+
+  test('Rechaza un Error', async () => {
+    await expect(Promise.reject('Error')).rejects.toBe('Error') // eslint-disable-line prefer-promise-reject-errors
+  })
 })
